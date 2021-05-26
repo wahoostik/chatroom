@@ -5,7 +5,8 @@ import './styles.scss';
 // == Composant
 const Message = () => (
   <div className="message">
-    <h1>Composant : Message</h1>
+    <p className="message__author">Super Chat</p>
+    <p className="message__content">Hey ! Tu vas bien ?</p>
   </div>
 );
 

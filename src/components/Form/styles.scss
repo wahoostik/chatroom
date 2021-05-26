@@ -1,1 +1,26 @@
 @use 'src/styles/vars' as v;
+
+.form {
+  display: flex;
+  &__input {
+    padding: v.$gutter;
+    flex: 1;
+    font-size: 1.5em;
+    border: none;
+    &::placeholder {
+      opacity: .6;
+    }
+  }
+  &__button {
+    color: v.$color-primary;
+    width: 4rem;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+
+    :hover {
+      color: v.$color-text;
+    }
+  }
+}
