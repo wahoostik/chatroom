@@ -12,7 +12,6 @@
     margin-left: v.$gutter * 1.5;
   }
   &__content {
-    animation: pop .5s cubic-bezier(0,0,.58,1);
     background-color: white;
     padding: v.$gutter * 1.5;
     border-radius: 30px;

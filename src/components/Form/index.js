@@ -1,7 +1,7 @@
 // == Import
 import React from 'react';
 import './styles.scss';
-import { Send } from 'react-feather';
+import { Send } from 'react-feather'; // Icône du boutton
 
 // == Composant
 const Form = () => (
