@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 // import
-import { SET_INPUT_VALUE } from 'src/actions';
+import { SET_INPUT_VALUE, SUBMIT_MESSAGE } from 'src/actions';
 
 // Le state initial est un objet vide
 const initialState = {
@@ -37,6 +37,28 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         newMessage: action.value,
       };
+    case SUBMIT_MESSAGE: {
+      console.log('case', action.type);
+
+      // ici on crée une nouvelle référence de tableau qui
+      // viendra les anciens messages du state et on ajoute
+      // en dernier le nouveau message reçu
+      const message = {
+        id: 4,
+        author: 'Tony',
+        content: state.newMessage,
+      };
+
+      const messages = [
+        ...state.messagesData,
+        message,
+      ];
+
+      return {
+        ...state,
+        messagesData: messages,
+      };
+    }
     default:
       // On retourne le state de base
       return state;

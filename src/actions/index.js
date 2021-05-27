@@ -1,6 +1,6 @@
 // Action types
 export const SET_INPUT_VALUE = 'SET_INPUT_VALUE';
-export const SUBMIT_INPUT_VALUE = 'SUBMIT_INPUT_VALUE';
+export const SUBMIT_MESSAGE = 'SUBMIT_MESSAGE';
 
 // Action creators
 export const setInputValue = (valueData) => ({
@@ -8,7 +8,6 @@ export const setInputValue = (valueData) => ({
   value: valueData,
 });
 
-export const submitInputValue = (valueData) => ({
-  type: SUBMIT_INPUT_VALUE,
-  value: valueData,
+export const submitMessage = () => ({
+  type: SUBMIT_MESSAGE,
 });

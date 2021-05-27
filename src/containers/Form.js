@@ -2,7 +2,7 @@
 /* eslint-disable no-underscore-dangle */
 import { connect } from 'react-redux';
 import Form from 'src/components/Form';
-import { setInputValue } from 'src/actions';
+import { setInputValue, submitMessage } from 'src/actions';
 
 // branchement en lecture du state
 const mapStateToProps = (state) => ({
@@ -20,8 +20,11 @@ const mapDispatchToProps = (dispatch) => ({
     console.log('action', action);
     dispatch(action);
   },
-  onSubmitInputValue: () => {
-    console.log('je veux envoyer le newMessage');
+  onSubmitForm: (message) => {
+    console.log('je veux envoyer le newMessage dans le state');
+    const action = submitMessage(message);
+    console.log('action', action);
+    dispatch(action);
   },
 });
 
