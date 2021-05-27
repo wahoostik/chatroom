@@ -20,6 +20,9 @@ const mapDispatchToProps = (dispatch) => ({
     console.log('action', action);
     dispatch(action);
   },
+  onSubmitInputValue: () => {
+    console.log('je veux envoyer le newMessage');
+  },
 });
 
 const componentToConnect = connect(mapStateToProps, mapDispatchToProps);

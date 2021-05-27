@@ -6,14 +6,21 @@ import './styles.scss';
 import { Send } from 'react-feather'; // Icône du boutton
 
 // == Composant
-const Form = ({ inputValue, onChangeInputValue }) => {
+const Form = ({ inputValue, onChangeInputValue, onSubmitInputValue }) => {
   const handleOnChange = (event) => {
     console.log('handle on change =', event.target.value);
     onChangeInputValue(event.target.value);
   };
 
+  const handleOnSubmit = (event) => {
+    // On arrête le comportement par défaut du formulaire
+    event.preventDefault();
+    console.log('handle on submit');
+    onSubmitInputValue();
+  };
+
   return (
-    <form className="form">
+    <form className="form" onSubmit={handleOnSubmit}>
       <input
         className="form__input"
         type="text"
@@ -31,6 +38,7 @@ const Form = ({ inputValue, onChangeInputValue }) => {
 Form.propTypes = {
   inputValue: PropTypes.string.isRequired,
   onChangeInputValue: PropTypes.func.isRequired,
+  onSubmitInputValue: PropTypes.func.isRequired,
 };
 
 // == Export
