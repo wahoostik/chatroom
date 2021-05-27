@@ -10,14 +10,15 @@ const mapStateToProps = (state) => ({
 });
 
 // branchement en écriture du state
-const mapDispatchToProps = () => ({
-  onChangeInputValue: () => {
-    console.log('je veux modifier la valeur de newMessage');
+const mapDispatchToProps = (dispatch) => ({
+  onChangeInputValue: (value) => {
+    console.log('je veux modifier la valeur de newMessage =', value);
 
     // pour modifier une valeur du state
     // il faut créer une action : action types + action creator
-    const action = setInputValue();
+    const action = setInputValue(value);
     console.log('action', action);
+    dispatch(action);
   },
 });
 
