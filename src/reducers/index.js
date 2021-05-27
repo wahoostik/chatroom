@@ -17,6 +17,7 @@ const initialState = {
       content: 'How are you ?',
     },
   ],
+  newMessage: '',
 };
 
 // Le reducer doit toujours retourner le state
