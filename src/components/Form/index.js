@@ -16,7 +16,11 @@ const Form = ({ inputValue, onChangeInputValue, onSubmitForm }) => {
     // On arrête le comportement par défaut du formulaire
     event.preventDefault();
     console.log('handle on submit');
-    onSubmitForm();
+
+    // Pour faire un submit, il faut une valeur dans inputValue
+    if (inputValue) {
+      onSubmitForm();
+    }
   };
 
   return (
