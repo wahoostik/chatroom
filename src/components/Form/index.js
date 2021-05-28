@@ -1,12 +1,21 @@
 /* eslint-disable no-console */
 // == Import
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
 import { Send } from 'react-feather'; // Icône du boutton
 
 // == Composant
 const Form = ({ inputValue, onChangeInputValue, onSubmitForm }) => {
+  // la référence est le moyen d'atteindre le composant React
+  // une fois qu'il sera injecté dans le DOM
+  const inputRef = useRef(null);
+
+  // au 1er rendu du composant input, je veux mettre le focus dessus
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
   const handleOnChange = (event) => {
     console.log('handle on change =', event.target.value);
     onChangeInputValue(event.target.value);
@@ -26,6 +35,7 @@ const Form = ({ inputValue, onChangeInputValue, onSubmitForm }) => {
   return (
     <form className="form" onSubmit={handleOnSubmit}>
       <input
+        ref={inputRef}
         className="form__input"
         type="text"
         placeholder="Saississez votre message"
