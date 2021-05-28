@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 // import
-import { SET_INPUT_VALUE, SUBMIT_MESSAGE } from 'src/actions';
+import { SET_INPUT_VALUE, SUBMIT_MESSAGE, TOGGLE_SETTINGS } from 'src/actions';
 import { getHighestId } from 'src/selectors';
 
 // Le state initial est un objet vide
@@ -23,6 +23,7 @@ const initialState = {
     },
   ],
   newMessage: '',
+  openLogin: false,
 };
 
 // Le reducer doit toujours retourner le state
@@ -72,6 +73,13 @@ const reducer = (state = initialState, action = {}) => {
         newMessage: '', // Pour remettre à zéro après avoir envoyer un message
       };
     }
+    case TOGGLE_SETTINGS:
+      // console.log('case', TOGGLE_SETTINGS);
+      return {
+        ...state,
+        openLogin: !state.openLogin,
+      };
+
     default:
       // On retourne le state de base
       return state;
