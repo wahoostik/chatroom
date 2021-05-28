@@ -9,7 +9,7 @@ import { Send } from 'react-feather'; // Icône du boutton
 const Form = ({ inputValue, onChangeInputValue, onSubmitForm }) => {
   // la référence est le moyen d'atteindre le composant React
   // une fois qu'il sera injecté dans le DOM
-  const inputRef = useRef(null);
+  const inputRef = useRef(null); // null : je démarre de zéro, il n'y a pas de référence avant
 
   // au 1er rendu du composant input, je veux mettre le focus dessus
   useEffect(() => {
