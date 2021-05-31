@@ -1,6 +1,8 @@
 /* eslint-disable no-console */
 // import
-import { SET_INPUT_VALUE, SUBMIT_MESSAGE, TOGGLE_SETTINGS } from 'src/actions';
+import {
+  SET_INPUT_VALUE, SUBMIT_MESSAGE, TOGGLE_SETTINGS, CHANGE_INPUT_VALUE,
+} from 'src/actions';
 import { getHighestId } from 'src/selectors';
 
 // Le state initial est un objet vide
@@ -83,6 +85,19 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         openLogin: !state.openLogin,
+      };
+    case CHANGE_INPUT_VALUE:
+      // console.log('case', CHANGE_INPUT_VALUE);
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          // pour modifier dynamiquement des propriété d'objets,
+          // on doit ouvrir les crochets et placer une chaine de caractère
+          // à l'intérieur. Ici, cette string est contenue dans la proriété name
+          // de l'action
+          [action.name]: action.value,
+        },
       };
 
     default:
