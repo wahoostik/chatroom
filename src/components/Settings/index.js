@@ -2,7 +2,7 @@
 // == Import
 import React from 'react';
 import PropTypes from 'prop-types';
-import Field from 'src/components/Field';
+import Field from 'src/containers/Field';
 import './styles.scss';
 
 // == Composant

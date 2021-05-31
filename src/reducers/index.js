@@ -25,8 +25,8 @@ const initialState = {
   newMessage: '',
   openLogin: false,
   user: {
-    email: '',
-    password: '',
+    email: 'walter.white@breakingbad.com',
+    password: 'heisenberg',
     pseudo: 'Anonymous',
   },
 };
