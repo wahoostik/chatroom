@@ -24,15 +24,12 @@
     color: v.$color-settings;
     font-size: 1.5em;
   }
-  &__input, &__submit {
+  &__submit {
     width: 100%;
     border: none;
     border-radius: 3px;
     margin-bottom: v.$gutter / 2;
     padding: .5rem;
-  }
-&__submit {
-
     background-color: v.$color-settings;
     color: white;
   }

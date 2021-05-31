@@ -2,6 +2,7 @@
 // == Import
 import React from 'react';
 import PropTypes from 'prop-types';
+import Field from 'src/components/Field';
 import './styles.scss';
 
 // == Composant
@@ -24,15 +25,15 @@ const Settings = ({ open, onClickButton }) => {
         +
       </button>
       <form className="settings__form">
-        <input
+        <Field
           type="email"
-          placeholder="Email"
-          className="settings__input"
+          label="Email"
+          name="email"
         />
-        <input
+        <Field
           type="password"
-          placeholder="Mot de passe"
-          className="settings__input"
+          label="Mot de passe"
+          name="password"
         />
         <button
           type="submit"

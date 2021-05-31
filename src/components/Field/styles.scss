@@ -1,0 +1,19 @@
+@use 'src/styles/vars' as v;
+
+.field {
+  &__input, &__submit {
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: v.$gutter / 2;
+    padding: .5rem;
+  }
+  &__submit {
+    background-color: v.$color-settings;
+    color: white;
+  }
+  &__label {
+    color: white;
+    font-size: .7em;
+  }
+}

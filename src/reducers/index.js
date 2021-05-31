@@ -24,6 +24,11 @@ const initialState = {
   ],
   newMessage: '',
   openLogin: false,
+  user: {
+    email: '',
+    password: '',
+    pseudo: 'Anonymous',
+  },
 };
 
 // Le reducer doit toujours retourner le state
