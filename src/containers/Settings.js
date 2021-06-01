@@ -1,8 +1,9 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable no-console */
 /* eslint-disable no-underscore-dangle */
 import { connect } from 'react-redux';
 import Settings from 'src/components/Settings';
-import { toggleSettings } from 'src/actions';
+import { toggleSettings, login } from 'src/actions';
 
 // branchement en lecture
 // retourne un objet (de props)
@@ -16,6 +17,13 @@ const mapDispatchToProps = (dispatch) => ({
     // console.log('je veux ouvrir le login et modifier la valeur du state open');
 
     const action = toggleSettings();
+    console.log('action', action);
+    dispatch(action);
+  },
+
+  onSubmitForm: () => {
+    console.log('Je veux envoyer une requête');
+    const action = login();
     console.log('action', action);
     dispatch(action);
   },

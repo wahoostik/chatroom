@@ -1,15 +1,31 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable no-console */
 // == Import
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import Field from 'src/containers/Field';
 import './styles.scss';
 
 // == Composant
-const Settings = ({ open, onClickButton }) => {
+const Settings = ({ open, onClickButton, onSubmitForm }) => {
   const handleOnClick = () => {
     console.log('je clique sur le bouton');
     onClickButton();
+  };
+
+  const handleOnSubmit = (event) => {
+    event.preventDefault();
+    console.log('submit du form');
+    // onSubmitForm();
+    axios.post('http://localhost:3001/login', {
+      email: 'walter.white@breakingbad.com',
+      password: 'heisenberg'
+    })
+    .then((response) => {
+      console.log('response', response)
+    })
+    .catch((error) => console.log(error))
   };
 
   // Si open est true, settings settings--open, sinon settings
@@ -24,7 +40,7 @@ const Settings = ({ open, onClickButton }) => {
       >
         +
       </button>
-      <form className="settings__form">
+      <form className="settings__form" onSubmit={handleOnSubmit}>
         <Field
           type="email"
           label="Email"
@@ -49,6 +65,7 @@ const Settings = ({ open, onClickButton }) => {
 Settings.propTypes = {
   onClickButton: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
+  onSubmitForm: PropTypes.func.isRequired,
 };
 
 // == Export

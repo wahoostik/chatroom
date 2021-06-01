@@ -3,6 +3,7 @@ export const SET_INPUT_VALUE = 'SET_INPUT_VALUE';
 export const SUBMIT_MESSAGE = 'SUBMIT_MESSAGE';
 export const TOGGLE_SETTINGS = 'TOGGLE_SETTINGS';
 export const CHANGE_INPUT_VALUE = 'CHANGE_INPUT_VALUE';
+export const LOGIN = 'LOGIN';
 
 // Action creators
 export const setInputValue = (valueData) => ({
@@ -22,4 +23,8 @@ export const changeInputValue = (valueData, nameData) => ({
   type: CHANGE_INPUT_VALUE,
   value: valueData,
   name: nameData,
+});
+
+export const login = () => ({
+  type: LOGIN,
 });

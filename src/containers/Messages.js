@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { connect } from 'react-redux';
 import Messages from 'src/components/Messages';
 

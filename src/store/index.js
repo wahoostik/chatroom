@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable no-underscore-dangle */
 import { createStore } from 'redux';
 import reducer from 'src/reducers';

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 // == Import
 import React from 'react';
 import './styles.scss';
