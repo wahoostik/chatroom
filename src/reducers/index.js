@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 // import
 import {
-  SET_INPUT_VALUE, SUBMIT_MESSAGE, TOGGLE_SETTINGS, CHANGE_INPUT_VALUE,
+  SET_INPUT_VALUE, SUBMIT_MESSAGE, TOGGLE_SETTINGS, CHANGE_INPUT_VALUE, SAVE_PSEUDO,
 } from 'src/actions';
 import { getHighestId } from 'src/selectors';
 
@@ -26,7 +26,7 @@ const initialState = {
     },
   ],
   newMessage: '',
-  openLogin: true,
+  openLogin: false,
   user: {
     email: 'walter.white@breakingbad.com',
     password: 'heisenberg',
@@ -100,7 +100,15 @@ const reducer = (state = initialState, action = {}) => {
           [action.name]: action.value,
         },
       };
-
+    case SAVE_PSEUDO:
+      // console.log('case', SAVE_PSEUDO);
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          pseudo: action.pseudo,
+        },
+      };
     default:
       // On retourne le state de base
       return state;
