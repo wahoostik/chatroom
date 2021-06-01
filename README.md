@@ -55,6 +55,10 @@ Routes :
 
 Merci à l'école O'Clock ainsi que ses formateurs/professeurs.
 
+### Auteur
+
+**Anthony Paccaud**
+
 ### License
 
 This project is licensed under the MIT License.

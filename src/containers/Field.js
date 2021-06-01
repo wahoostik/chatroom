@@ -15,12 +15,12 @@ const mapStateToProps = (state, ownProps) => ({
 });
 const mapDispatchToProps = (dispatch, ownProps) => ({
   onChangeInputValue: (value) => {
-    console.log('je veux modifier la valeur de user dans le state = ', value);
+    // console.log('je veux modifier la valeur de user dans le state = ', value);
 
     // pour modifier une valeur du state
     // il faut créer une action : action types + action creator
     const action = changeInputValue(value, ownProps.name);
-    console.log('action', action);
+    // console.log('action', action);
     dispatch(action);
   },
 });

@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch) => ({
     // console.log('je veux ouvrir le login et modifier la valeur du state open');
 
     const action = toggleSettings();
-    console.log('action', action);
+    // console.log('action', action);
     dispatch(action);
   },
 

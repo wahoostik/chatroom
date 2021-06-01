@@ -1,7 +1,7 @@
 {
   "name": "react-modele",
   "scripts": {
-    "server": "node server.js",
+    "server": "node server/index.js",
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
     "lint": "eslint src/**/*.js",
@@ -57,6 +57,7 @@
     "react-feather": "^2.0.9",
     "react-redux": "^7.2.4",
     "redux": "^4.1.0",
+    "redux-devtools-extension": "^2.13.9",
     "socket.io": "^4.1.2"
   }
 }

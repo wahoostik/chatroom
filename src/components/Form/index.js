@@ -17,7 +17,7 @@ const Form = ({ inputValue, onChangeInputValue, onSubmitForm }) => {
   }, []);
 
   const handleOnChange = (event) => {
-    console.log('handle on change =', event.target.value);
+    // console.log('handle on change =', event.target.value);
     onChangeInputValue(event.target.value);
   };
 

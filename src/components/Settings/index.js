@@ -3,7 +3,6 @@
 // == Import
 import React from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
 import Field from 'src/containers/Field';
 import './styles.scss';
 
@@ -17,15 +16,7 @@ const Settings = ({ open, onClickButton, onSubmitForm }) => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
     console.log('submit du form');
-    // onSubmitForm();
-    axios.post('http://localhost:3001/login', {
-      email: 'walter.white@breakingbad.com',
-      password: 'heisenberg'
-    })
-    .then((response) => {
-      console.log('response', response)
-    })
-    .catch((error) => console.log(error))
+    onSubmitForm();
   };
 
   // Si open est true, settings settings--open, sinon settings
