@@ -1,6 +1,7 @@
 {
   "name": "react-modele",
   "scripts": {
+    "server": "node server.js",
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
     "lint": "eslint src/**/*.js",
@@ -48,12 +49,14 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "express": "^4.17.1",
     "feather-icons": "^4.28.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-feather": "^2.0.9",
     "react-redux": "^7.2.4",
-    "redux": "^4.1.0"
+    "redux": "^4.1.0",
+    "socket.io": "^4.1.2"
   }
 }
