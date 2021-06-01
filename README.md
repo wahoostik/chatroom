@@ -41,3 +41,20 @@ Routes :
 
 - `POST http://localhost:3001/forgot`
 - `GET http://localhost:3001/theme/{email}`
+
+
+### Codé avec
+
+* React
+* Redux
+* SCSS
+* Express
+* Socket.io
+
+### Remerciements
+
+Merci à l'école O'Clock ainsi que ses formateurs/professeurs.
+
+### License
+
+This project is licensed under the MIT License.
