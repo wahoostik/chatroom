@@ -10,12 +10,18 @@ const auth = (store) => (next) => async (action) => {
       // je peux récupérer le state courant grâce au store
       const state = store.getState();
       // à ce niveau là, on veut traiter la requête de connexion
-      console.log('case', LOGIN);
+      // console.log('case', LOGIN);
       try {
-        const result = await axios.post('http://localhost:3001/login', {
+        const result = await axios({
+          method: 'post',
+          url: 'http://localhost:3001/login',
+          data: state.user,
+        });
+        /* const result = await axios.post('http://localhost:3001/login', {
           email: state.user.email,
           password: state.user.password,
         });
+        */
         console.log('result', result);
 
         // une fois qu'on a la réponse on peut venir stocker le pseudo

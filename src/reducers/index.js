@@ -11,18 +11,13 @@ const initialState = {
   messagesData: [
     {
       id: 1,
-      author: 'Super Tony',
-      content: 'Hey !',
-    },
-    {
-      id: 2,
       author: 'Super Computer',
       content: 'Hello !',
     },
     {
-      id: 3,
-      author: 'Super Tony',
-      content: 'How are you ?',
+      id: 2,
+      author: 'Super Computer',
+      content: 'Bienvenue sur le chat :)',
     },
   ],
   newMessage: '',
@@ -66,7 +61,7 @@ const reducer = (state = initialState, action = {}) => {
       // en dernier le nouveau message reçu
       const message = {
         id: getHighestId(state) + 1,
-        author: 'Tony',
+        author: state.user.pseudo,
         content: state.newMessage,
       };
 

@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.scss';
-import Message from './Message';
+import Message from 'src/containers/Message';
 
 // == Composant
 // On prends l'id du message pour la réconciliation, et on passe tout le reste au composant Message
