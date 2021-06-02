@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable import/prefer-default-export */
 // les selectors sont des fonctions qui vont traiter le state ou une partie du state
 // pour renvoyer des nouvelles données
@@ -9,3 +10,6 @@ export const getHighestId = ({ messagesData }) => {
   // on retourne l'id max
   return Math.max(...ids);
 };
+
+// Fonction qui compare l'auteur du message avec le pseudo de l'utilisateur connecté et elle retourne un booléen
+export const isAuthorMessage = (state, author) => state.user.pseudo === author;

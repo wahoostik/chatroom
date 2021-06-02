@@ -1,13 +1,14 @@
 // == Import
 import React from 'react';
 import PropTypes from 'prop-types';
+// classNames permet d'avoir des noms de classes injecter conditionenellement
 import classNames from 'classnames';
 import './styles.scss';
 
 // == Composant
-const Message = ({ author, content, pseudo }) => {
+const Message = ({ author, content, isMine }) => {
   // Si c'est bon, 'message message--is-mine', sinon 'message'
-  const classnames = classNames('message', { 'message message--is-mine': author === pseudo });
+  const classnames = classNames('message', { 'message message--is-mine': isMine });
 
   return (
     <div className={classnames}>
@@ -20,7 +21,7 @@ const Message = ({ author, content, pseudo }) => {
 Message.propTypes = {
   author: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
-  pseudo: PropTypes.string.isRequired,
+  isMine: PropTypes.bool.isRequired,
 };
 
 // == Export
