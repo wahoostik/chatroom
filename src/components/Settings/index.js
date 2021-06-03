@@ -8,7 +8,7 @@ import './styles.scss';
 
 // == Composant
 const Settings = ({
-  open, onClickButton, onSubmitForm, isLogOrNot, pseudoUser, onLogoutForm,
+  open, onClickButton, onSubmitForm, isLogOrNot, pseudoUser,
 }) => {
   const handleOnClick = () => {
     console.log('je clique sur le bouton');
@@ -19,12 +19,6 @@ const Settings = ({
     event.preventDefault();
     console.log('submit du form');
     onSubmitForm();
-  };
-
-  const handleOnLogout = (event) => {
-    event.preventDefault();
-    console.log('logout du form');
-    onLogoutForm();
   };
 
   // Si open est true, settings settings--open, sinon settings
@@ -40,16 +34,7 @@ const Settings = ({
         +
       </button>
       {isLogOrNot ? ( // Si on est logged, alors on aura le bievenue, sinon on aura le formulaire
-        <div className="settings__logged">Bienvenue {pseudoUser}
-          <form className="settings__form" onSubmit={handleOnLogout}>
-            <button
-              type="submit"
-              className="settings__logout"
-            >
-              Se déconnecter
-            </button>
-          </form>
-        </div>
+        <div className="settings__logged">Bienvenue {pseudoUser}</div>
       ) : (
         <>
           <form className="settings__form" onSubmit={handleOnSubmit}>
@@ -82,7 +67,6 @@ Settings.propTypes = {
   onSubmitForm: PropTypes.func.isRequired,
   isLogOrNot: PropTypes.bool.isRequired,
   pseudoUser: PropTypes.string.isRequired,
-  onLogoutForm: PropTypes.func.isRequired,
 };
 
 // == Export
