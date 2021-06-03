@@ -3,7 +3,7 @@
 /* eslint-disable no-underscore-dangle */
 import { connect } from 'react-redux';
 import Settings from 'src/components/Settings';
-import { toggleSettings, login, logout } from 'src/actions';
+import { toggleSettings, login } from 'src/actions';
 
 // branchement en lecture
 // retourne un objet (de props)
@@ -26,13 +26,6 @@ const mapDispatchToProps = (dispatch) => ({
   onSubmitForm: () => {
     console.log('Je veux envoyer une requête');
     const action = login();
-    console.log('action', action);
-    dispatch(action);
-  },
-
-  onLogoutForm: () => {
-    console.log('Je veux envoyer une requête de déconnexion');
-    const action = logout();
     console.log('action', action);
     dispatch(action);
   },
