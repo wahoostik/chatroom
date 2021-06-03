@@ -7,7 +7,9 @@ import Field from 'src/containers/Field';
 import './styles.scss';
 
 // == Composant
-const Settings = ({ open, onClickButton, onSubmitForm }) => {
+const Settings = ({
+  open, onClickButton, onSubmitForm, isLogOrNot, pseudoUser,
+}) => {
   const handleOnClick = () => {
     console.log('je clique sur le bouton');
     onClickButton();
@@ -31,24 +33,30 @@ const Settings = ({ open, onClickButton, onSubmitForm }) => {
       >
         +
       </button>
-      <form className="settings__form" onSubmit={handleOnSubmit}>
-        <Field
-          type="email"
-          label="Email"
-          name="email"
-        />
-        <Field
-          type="password"
-          label="Mot de passe"
-          name="password"
-        />
-        <button
-          type="submit"
-          className="settings__submit"
-        >
-          Se connecter
-        </button>
-      </form>
+      {isLogOrNot ? ( // Si on est logged, alors on aura le bienvenue, sinon on aura le formulaire
+        <div className="settings__logged">Bienvenue {pseudoUser}</div>
+      ) : (
+        <>
+          <form className="settings__form" onSubmit={handleOnSubmit}>
+            <Field
+              type="email"
+              label="Email"
+              name="email"
+            />
+            <Field
+              type="password"
+              label="Mot de passe"
+              name="password"
+            />
+            <button
+              type="submit"
+              className="settings__submit"
+            >
+              Se connecter
+            </button>
+          </form>
+        </>
+      )}
     </div>
   );
 };
@@ -57,6 +65,8 @@ Settings.propTypes = {
   onClickButton: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
   onSubmitForm: PropTypes.func.isRequired,
+  isLogOrNot: PropTypes.bool.isRequired,
+  pseudoUser: PropTypes.string.isRequired,
 };
 
 // == Export

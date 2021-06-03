@@ -27,6 +27,7 @@ const initialState = {
     password: 'heisenberg',
     pseudo: 'Anonymous',
   },
+  isLogged: false,
 };
 
 // Le reducer doit toujours retourner le state
@@ -103,6 +104,8 @@ const reducer = (state = initialState, action = {}) => {
           ...state.user,
           pseudo: action.pseudo,
         },
+        isLogged: true,
+        openLogin: false,
       };
     default:
       // On retourne le state de base

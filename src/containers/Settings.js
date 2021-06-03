@@ -10,6 +10,8 @@ import { toggleSettings, login } from 'src/actions';
 // elle reçoit le state en params
 const mapStateToProps = (state) => ({
   open: state.openLogin,
+  isLogOrNot: state.isLogged,
+  pseudoUser: state.user.pseudo,
 });
 
 const mapDispatchToProps = (dispatch) => ({

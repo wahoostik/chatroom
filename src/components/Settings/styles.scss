@@ -33,4 +33,12 @@
     background-color: v.$color-settings;
     color: white;
   }
+  &__logged {
+    width: 100%;
+    padding: 7px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: white;
+    text-align: center;
+  }
 }
