@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 // import
 import {
-  SET_INPUT_VALUE, SUBMIT_MESSAGE, TOGGLE_SETTINGS, CHANGE_INPUT_VALUE, SAVE_PSEUDO,
+  SET_INPUT_VALUE, SUBMIT_MESSAGE, TOGGLE_SETTINGS, CHANGE_INPUT_VALUE, SAVE_PSEUDO, LOGOUT,
 } from 'src/actions';
 // import { getHighestId } from 'src/selectors';
 
@@ -106,6 +106,11 @@ const reducer = (state = initialState, action = {}) => {
         },
         isLogged: true,
         openLogin: false,
+      };
+    case LOGOUT:
+      console.log('case', LOGOUT);
+      return {
+        ...initialState,
       };
     default:
       // On retourne le state de base
