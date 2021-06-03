@@ -7,6 +7,7 @@ export const LOGIN = 'LOGIN';
 export const SAVE_PSEUDO = 'SAVE_PSEUDO';
 export const WEBSOCKET_CONNECT = 'WEBSOCKET_CONNECT';
 export const SEND_MESSAGE = 'SEND_MESSAGE';
+export const LOGOUT = 'LOGOUT';
 
 // Action creators
 export const setInputValue = (valueData) => ({
@@ -44,4 +45,8 @@ export const websocketConnect = () => ({
 
 export const sendMessage = () => ({
   type: SEND_MESSAGE,
+});
+
+export const logout = () => ({
+  type: LOGOUT,
 });
