@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
-import { WEBSOCKET_CONNECT, SEND_MESSAGE } from 'src/actions';
+import { WEBSOCKET_CONNECT, SEND_MESSAGE, submitMessage } from 'src/actions';
 
 let socket;
 
@@ -20,7 +20,8 @@ const websocket = (store) => (next) => (action) => {
       socket.on('server_message', (message) => {
         // ici on va stocker le nouveau message dans le state
         // donc on va dispatch une action
-        console.log('message reçu du serveur', message);
+        // console.log('message reçu du serveur', message);
+        store.dispatch(submitMessage(message));
       });
 
       // test d'envoi

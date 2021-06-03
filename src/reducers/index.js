@@ -4,7 +4,7 @@
 import {
   SET_INPUT_VALUE, SUBMIT_MESSAGE, TOGGLE_SETTINGS, CHANGE_INPUT_VALUE, SAVE_PSEUDO,
 } from 'src/actions';
-import { getHighestId } from 'src/selectors';
+// import { getHighestId } from 'src/selectors';
 
 // Le state initial est un objet vide
 const initialState = {
@@ -56,18 +56,18 @@ const reducer = (state = initialState, action = {}) => {
       // // on va déterminer quel est l'id max
       // const maxId = Math.max(...ids);
 
+      // const message = {
+      //   id: getHighestId(state) + 1,
+      //   author: state.user.pseudo,
+      //   content: state.newMessage,
+      // };
+
       // ici on crée une nouvelle référence de tableau qui
       // viendra les anciens messages du state et on ajoute
-      // en dernier le nouveau message reçu
-      const message = {
-        id: getHighestId(state) + 1,
-        author: state.user.pseudo,
-        content: state.newMessage,
-      };
-
+      // en dernier le nouveau message reçu du serveur websocket
       const messages = [
         ...state.messagesData,
-        message,
+        action.theMessage,
       ];
 
       return {

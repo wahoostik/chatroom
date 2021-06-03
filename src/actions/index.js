@@ -14,8 +14,9 @@ export const setInputValue = (valueData) => ({
   value: valueData,
 });
 
-export const submitMessage = () => ({
+export const submitMessage = (theMessage) => ({
   type: SUBMIT_MESSAGE,
+  theMessage,
 });
 
 export const toggleSettings = () => ({
