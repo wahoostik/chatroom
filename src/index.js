@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 
 // == Import : local
 // Composants
-import Chatroom from 'src/components/Chatroom';
+import Chatroom from 'src/containers/Chatroom';
 import store from 'src/store';
 
 // == Render

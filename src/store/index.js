@@ -7,12 +7,13 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 // Les mettre dans l'ordre. L'ordre est important
 import debugMiddleware from 'src/middlewares/debugMiddleware';
 import authMiddleware from 'src/middlewares/authMiddleware';
+import websocketMiddleware from 'src/middlewares/websocketMiddleware';
 import reducer from 'src/reducers';
 
 // le store est le gardien du state
 // la fonction createStore prend en argument le reducer
 const store = createStore(reducer, composeWithDevTools(
-  applyMiddleware(debugMiddleware, authMiddleware),
+  applyMiddleware(debugMiddleware, authMiddleware, websocketMiddleware),
   // other store enhancers if any
 ));
 

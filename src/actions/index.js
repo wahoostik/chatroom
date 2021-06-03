@@ -5,7 +5,7 @@ export const TOGGLE_SETTINGS = 'TOGGLE_SETTINGS';
 export const CHANGE_INPUT_VALUE = 'CHANGE_INPUT_VALUE';
 export const LOGIN = 'LOGIN';
 export const SAVE_PSEUDO = 'SAVE_PSEUDO';
-export const WS_CONNECT = 'WS_CONNECT';
+export const WEBSOCKET_CONNECT = 'WEBSOCKET_CONNECT';
 export const SEND_MESSAGE = 'SEND_MESSAGE';
 
 // Action creators
@@ -35,4 +35,12 @@ export const login = () => ({
 export const savePseudo = (pseudoData) => ({
   type: SAVE_PSEUDO,
   pseudo: pseudoData,
+});
+
+export const websocketConnect = () => ({
+  type: WEBSOCKET_CONNECT,
+});
+
+export const sendMessage = () => ({
+  type: SEND_MESSAGE,
 });

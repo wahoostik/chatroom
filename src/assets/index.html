@@ -11,19 +11,19 @@
 		<div id="root"></div>
 		<script>
 		             // on crée le canal d'échange
-		             const socket = io('http://localhost:3001');
-
-		             // on se met en mode écoute avec on (addEventListener)
-		             socket.on('server_message', (response) => {
-		                 console.log('message reçu du serveur', response);
-		             });
-
-		             // on envoie un message au server, en utilisant bien le bon type d'événement
-		             // ce message peut contenir des infos
-		             socket.emit('client_message', {
-		                 author: 'Vincent',
-		                 content: 'lorem ipsum'
-		             });
+		             // const socket = io('http://localhost:3001');
+// 
+		             // // on se met en mode écoute avec on (addEventListener)
+		             // socket.on('receive_message', (response) => {
+		             //     console.log('message reçu du serveur', response);
+		             // });
+// 
+		             // // on envoie un message au server, en utilisant bien le bon type d'événement
+		             // // ce message peut contenir des infos
+		             // socket.emit('send_message', {
+		             //     author: 'Vincent',
+		             //     content: 'lorem ipsum'
+		             // });
 		</script>
     </body>
 </html>
